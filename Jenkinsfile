@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'vamobora' }
+    tools {
+        terraform 'terraform'
+    }
     stages {
         stage('Example') {
             agent any
