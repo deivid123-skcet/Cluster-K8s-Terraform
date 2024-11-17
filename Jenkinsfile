@@ -3,6 +3,9 @@ pipeline {
     tools {
         terraform 'terraform'
     }
+    clouds {
+        Datacenter 'Datacenter(proxmox)'
+    }
     stages {
         stage('Terraform Init') {
             steps {
