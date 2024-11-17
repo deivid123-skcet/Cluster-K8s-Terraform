@@ -1,5 +1,5 @@
 pipeline {
-    agent vamobora
+    agent {vamobora}
     stages {
         stage('Example') {
             agent any
