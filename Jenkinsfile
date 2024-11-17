@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'proxmox' }
+    agent { label 'vamobora' }
     tools {
         terraform 'terraform'
     }
