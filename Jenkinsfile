@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'proxmox2' }
+    agent { label 'proxmox' }
     tools {
         terraform 'terraform'
     }
