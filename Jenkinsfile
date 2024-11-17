@@ -4,7 +4,7 @@ pipeline {
         terraform 'terraform'
     }
     clouds {
-        label 'Datacenter(proxmox)'
+        Datacenter 'proxmox'
     }
     stages {
         stage('Terraform Init') {
