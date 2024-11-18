@@ -39,7 +39,7 @@ locals {
   masters = {
     count = 3
     name_prefix = "k8-master-producao"
-    vmid_prefix = 300
+    vmid_prefix = 800
 
     cores = 2
     disk_size = "40G"
