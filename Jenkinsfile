@@ -13,6 +13,10 @@ pipeline {
             steps {
                 sh 'terraform plan'
             }
+        stage('Terraform plan') {
+            steps {
+                sh 'terraform init'
+            }
         }
     }
 }
