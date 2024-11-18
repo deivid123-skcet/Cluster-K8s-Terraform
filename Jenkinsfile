@@ -14,9 +14,9 @@ pipeline {
                 sh 'terraform plan'
             }
         }
-        stage('Terraform init') {
+        stage('Terraform Apply') {
             steps {
-                sh 'terraform init -auto-approve'
+                sh 'terraform apply -auto-approve'
                 }
             }
         }
