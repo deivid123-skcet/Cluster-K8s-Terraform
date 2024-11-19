@@ -19,6 +19,7 @@ pipeline {
                 input 'Do you approve deployment?'
                 sh 'terraform apply -auto-approve'
                 }
+        }
         stage('Terraform destroy') {
             steps {
                 input 'Do you approve deployment?'
