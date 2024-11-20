@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Criação do cluster Kubernetes com Kubespray') {
             steps {
-                sh 'cd kubespray/ && pip install virtualenv && virtualenv ansible_env && source ansible_env/bin/activate && pip install ansible && mkdir -p inventory/mycluster/ && cp -rfp ../inventory.ini inventory/mycluster && ansible-playbook -i inventory/mycluster/inventory.ini  --become --become-user=root cluster.yml'
+                sh 'cd kubespray/ && mkdir -p inventory/mycluster/ && cp -rfp ../inventory.ini inventory/mycluster && ansible-playbook -i inventory/mycluster/inventory.ini  --become --become-user=root cluster.yml'
             }
         }
         stage('Terraform destroy') {
