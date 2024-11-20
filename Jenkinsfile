@@ -24,8 +24,7 @@ pipeline {
             steps {
                 sh 'rm -rf kubespray/'
                 sh 'git clone https://github.com/kubernetes-sigs/kubespray.git'
-                sh 'cd kubespray/ && ls -l'
-                //sh 'cp -rfp ../inventory.ini inventory/mycluster'
+                sh 'cd kubespray/ && cp -rfp ../inventory.ini inventory/mycluster'
             }
         }
         stage('Criação do cluster Kubernetes com Kubespray') {
