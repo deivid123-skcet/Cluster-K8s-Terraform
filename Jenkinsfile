@@ -31,6 +31,8 @@ pipeline {
         stage('Criação do cluster Kubernetes com Kubespray') {
             steps {
                 sh 'ansible-playbook -i inventory/mycluster/hosts.yaml  --become --become-user=root cluster.yml'
+            }
+        }
         stage('Terraform destroy') {
             steps {
                 input 'Você quer destruir o cluster?'
