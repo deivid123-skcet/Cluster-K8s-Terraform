@@ -25,7 +25,6 @@ pipeline {
                 sh 'rm -rf kubespray/'
                 sh 'git clone https://github.com/kubernetes-sigs/kubespray.git'
                 sh 'cd kubespray'
-                sh 'cp -rfp inventory/sample inventory/mycluster'
                 sh 'cp -rfp ../inventory.ini inventory/mycluster'
             }
         }
