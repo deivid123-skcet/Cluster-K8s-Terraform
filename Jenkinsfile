@@ -24,14 +24,13 @@ pipeline {
             steps {
                 sh 'rm -rf kubespray/'
                 sh 'git clone https://github.com/kubernetes-sigs/kubespray.git'
-                sh 'cd kubespray/'
-                sh 'ls -l ../'
-                sh 'cp -rfp ../inventory.ini inventory/mycluster'
+                sh 'cd kubespray/ && ls -l'
+                //sh 'cp -rfp ../inventory.ini inventory/mycluster'
             }
         }
         stage('Criação do cluster Kubernetes com Kubespray') {
             steps {
-                sh 'ansible-playbook -i inventory/mycluster/hosts.yaml  --become --become-user=root cluster.yml'
+                sh 'ansible-playbook -i kubespray/inventory/mycluster/inventory.ini  --become --become-user=root kubespray/cluster.yml'
             }
         }
         stage('Terraform destroy') {
