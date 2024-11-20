@@ -55,4 +55,20 @@ resource "proxmox_vm_qemu" "masters" {
         slot = local.disks.main.slot
     }
     tags = local.masters.tags
+
+    connection {
+        type = "ssh"
+        user =  local.cloud_init.user
+        private_key = file("/root/.ssh/id_rsa")
+        host = cidrhost(
+            local.cidr,
+            local.masters.network_last_octet + count.index
+        )
+    }
+    #Espera o cloud-init iniciar a vm antes de rodar o kubespray
+    provisioner "remote-exec" {
+        inline = [
+            "cloud-init status --wait"
+        ]
+    }
 }
