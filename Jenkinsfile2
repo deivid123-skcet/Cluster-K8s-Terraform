@@ -1,0 +1,14 @@
+pipeline {
+    agent { label 'vamobora' }
+    tools {
+        terraform 'terraform'
+        ansible 'ansible'
+    }
+    stages {
+        stage('Terraform Init') {
+            steps {
+                sh 'ansible --version'
+            }
+          }
+        }
+    }
