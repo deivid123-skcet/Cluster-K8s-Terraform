@@ -33,6 +33,7 @@ locals {
   cloud_init = {
     user = "ubuntu"
     password = "12345"
+    name_server = "192.168.18.1"
     ssh_public_key = file("/root/.ssh/id_rsa.pub")
   }
 
