@@ -17,7 +17,7 @@ resource "proxmox_vm_qemu" "masters" {
     memory = local.masters.memory
 
     ciuser = local.cloud_init.user
-    cipassword = local.cloud_init.password
+    sshkeys = local.cloud_init.ssh_public_key
     ipconfig0 = format(
         "ip=%s/24,gw=%s",
         cidrhost(
