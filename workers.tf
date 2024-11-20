@@ -63,7 +63,7 @@ resource "proxmox_vm_qemu" "workers" {
         private_key = file("/root/.ssh/id_rsa")
         host = cidrhost(
             local.cidr,
-            local.workers.network_last_octect + count.index
+            local.workers.network_last_octet + count.index
     )
   }
 
