@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Criação do cluster Kubernetes com Kubespray') {
             steps {
-                sh 'ansible-playbook -i kubespray/inventory/mycluster/inventory.ini  --become --become-user=root cluster.yml'
+                sh 'cd kubespray/ && ansible-playbook -i kubespray/inventory/mycluster/inventory.ini  --become --become-user=root cluster.yml'
             }
         }
         stage('Terraform destroy') {
