@@ -27,8 +27,8 @@ inventory.tmpl = é o template que será preenchido com as informações extraid
 
 3 - Confiurar um Node do Jenkins e nele precisa está instalado o terraform e ansible, o ansible é para que o kubespray possa ser executado.
 
-3 - Após configuração do usuario e api token, é necessario pegar o usuario e api token e configurar na parte de variaveis globais do jenkins para que não tenhamos a necessidade de colocar usuario e senha no arquivo provider.tf, exemplo de onde cadastrar na imagem abaixo.
+4 - Após configuração do usuario e api token, é necessario pegar o usuario e api token e configurar na parte de variaveis globais do jenkins para que não tenhamos a necessidade de colocar usuario e senha no arquivo provider.tf, exemplo de onde cadastrar na imagem abaixo.
 
 ![Screenshot from 2024-11-20 22-04-37](https://github.com/user-attachments/assets/0164cbf1-03c2-467e-ab3d-69df2bddefe0)
 
-4 - Agora o pipeline já pode ser construido no Jenkins, lembrando que você só precisa apontar o JenkinsFile dentro da pipeline, ele vai criar as VMS o arquivo de inventario com os Ips das VMS e seguir com a criação do Cluster Kubernetes.
+5 - Agora o pipeline já pode ser construido no Jenkins, lembrando que você só precisa apontar o JenkinsFile dentro da pipeline, ele vai criar as VMS o arquivo de inventario com os Ips das VMS e seguir com a criação do Cluster Kubernetes.
